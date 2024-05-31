@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- TextView para el título -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="#3b5998"
+        android:gravity="center"
+        android:text="Gym App"
+        android:textColor="#FFFDFD"
+        android:textSize="20sp" /> <!-- Color de fondo azul -->
+        android:text="Mi Agenda Fitness"
+        android:textColor="#ffffff" <!-- Color del texto blanco -->
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <!-- Espacio separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
+    <!-- Contenedor para los campos de entrada -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0e0e0" <!-- Fondo gris claro para diferenciar el cuadro -->
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="4dp"> <!-- Sombra para resaltar el cuadro -->
+
+        <!-- Campo de entrada para el nombre del ejercicio -->
+        <EditText
+            android:id="@+id/editTextExerciseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del ejercicio"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:padding="20dp" />
+
+        <!-- Campo de entrada para el día del ejercicio -->
+        <EditText
+            android:id="@+id/editTextDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Día"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:padding="8dp" />
+
+        <!-- Campo de entrada para la hora del ejercicio -->
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hora"
+            android:inputType="time"
+            android:textSize="18sp"
+            android:padding="8dp" />
+
+        <!-- Campo de entrada para las repeticiones -->
+        <EditText
+            android:id="@+id/editTextRepetitions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repeticiones"
+            android:inputType="number"
+            android:textSize="18sp"
+            android:padding="8dp" />
+
+        <!-- Botón para enviar los datos -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:background="#3b5998"
+            android:textColor="#ffffff"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"/>
+</LinearLayout>
+
+
