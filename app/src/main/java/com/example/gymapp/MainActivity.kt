@@ -1,46 +1,36 @@
 package com.example.gymapp
+import com.example.gymapp.R
+
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.gymapp.ui.theme.GymAppTheme
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            GymAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        // Referencias a los campos de entrada
+        val editTextExerciseName: EditText = findViewById(R.id.editTextExerciseName)
+        val editTextDay: EditText = findViewById(R.id.editTextDay)
+        val editTextTime: EditText = findViewById(R.id.editTextTime)
+        val editTextRepetitions: EditText = findViewById(R.id.editTextRepetitions)
+        val submitButton: Button = findViewById(R.id.submitButton)
+
+        // Manejar el evento de clic del botón
+        submitButton.setOnClickListener {
+            // Obtener los datos de los campos de entrada
+            val exerciseName = editTextExerciseName.text.toString()
+            val day = editTextDay.text.toString()
+            val time = editTextTime.text.toString()
+            val repetitions = editTextRepetitions.text.toString()
+
+            // Aquí puedes guardar los datos en una base de datos local, SharedPreferences, etc.
+            // Por ahora, solo mostraremos los datos en un Toast como ejemplo.
+            Toast.makeText(this, "Ejercicio: $exerciseName\nDía: $day\nHora: $time\nRepeticiones: $repetitions", Toast.LENGTH_LONG).show()
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GymAppTheme {
-        Greeting("Android")
     }
 }
